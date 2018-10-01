@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Join the Kadabra Squad</title>
+		<style>
+			.form input{margin:10px 5px;margin-right:50%;display:block;margin:0 auto;border-radius:4px;padding:5px 0;}
+			.form label{margin: 23px 0;display: block;font-size: 1.2em;}
+			.form button{margin-bottom: 20px;padding: 11px;}
+			.form {border:1px solid black;width:35%; margin:0 auto;text-align:center;}
+		</style>
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link href="main.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript" defer="defer">
+			function main(){
+				drawMargins();
+				console.log("in");
+				var form = document.querySelector('.form');
+				var fields = form.querySelectorAll('input[type="text"]');
+				var button = document.getElementById('btn');
+				for(i = 0; i < fields.length; i++){
+					fields[i].addEventListener("keydown", validate);
+					fields[i].addEventListener("change", validate);
+				}			
+				function validate(e){
+					switch(e.target.name){
+						case 'username':
+							patt = /^[a-zA-Z0-9]{0,16}$/;
+							val = e.target.value;
+							console.log(patt.test(val));
+							if(e.keyCode == 32){ 
+								e.preventDefault();
+								alert("No spaces are aloud in username");
+								}
+							if(patt.test(val)){
+								console.log("TRUE");
+								e.target.style.border = '2px solid green';
+								return true;
+							}else{
+								e.preventDefault();
+								alert("Username cannot contain spaces, and must be less than 16 characters long.");
+								break;
+							}
+						case 'password':
+							patt = /^[a-zA-Z0-9]{6,16}$/;
+							val = e.target.value;
+							console.log(patt.test(val));
+							if(e.keyCode == 32){ 
+								e.preventDefault();
+								alert("No spaces are aloud in password");
+								}
+							if(patt.test(val)){
+								console.log("TRUE");
+								e.target.style.border = '2px solid green';
+								return true;
+							}else{
+								if(val.length < 6){
+									e.target.style.border = '2px solid red';
+									return false;
+									}
+								else{
+									e.preventDefault();
+									alert("Username cannot contain spaces, and must be between 6 - 16.");
+									break;
+								}
+							}
+						case 'name':
+							patt = /./;
+							val = e.target.value;
+							console.log(patt.test(val));
+							if(patt.test(val)){
+								console.log("TRUE");
+								e.target.style.border = '2px solid green';
+								return true;
+							}else{
+								return false;
+							}
+						case 'email':
+							patt = /[a-zA-Z0-9\.]+@[a-zA-Z0-9]+\.[a-z\.]+/;
+							val = e.target.value;
+							console.log(patt.test(val));
+							if(e.keyCode == 32){ 
+								e.preventDefault();
+								alert("No spaces are aloud in emails");
+								}
+							if(patt.test(val)){
+								console.log("TRUE");
+								e.target.style.border = '2px solid green';
+								return true;
+							}else{
+									e.target.style.border = '2px solid red';
+									return false;
+							}
+							break;
+						case 'birthday':
+							patt = /[0-9]+[1-2]{0,2}\/[0-9]{0,2}\/[0-9]{0,4}/;
+							val = e.target.value;
+							console.log(patt.test(val));
+							if(e.keyCode == 32){ 
+								e.preventDefault();
+								alert("No spaces are aloud in dates");
+								}
+							if(patt.test(val)){
+								console.log("TRUE");
+								e.target.style.border = '2px solid green';
+								return true;
+							}else{
+									e.target.style.border = '2px solid red';
+									return false;
+							}
+							break;
+						
+							break;
+						case 'gender':
+							patt = /[mfMF]/;
+							val = e.target.value;
+							console.log(patt.test(val));
+							if(patt.test(val)){
+								console.log("TRUE");
+								e.target.style.border = '2px solid green';
+								return true;
+							}else{	
+									e.target.style.border = '2px solid red';
+									return false;
+							}
+						case 'credit':
+							patt = /\d{16}/;
+							val = e.target.value;
+							console.log(patt.test(val));
+							if(patt.test(val)){
+								button.disabled = false;
+								console.log("TRUE");
+								e.target.style.border = '2px solid green';
+								return true;
+							}else{	
+									e.target.style.border = '2px solid red';
+									return false;
+							}
+						case 'title':
+							patt = /./;
+							val = e.target.value;
+							console.log(patt.test(val));
+							if(patt.test(val)){
+								console.log("TRUE");
+								e.target.style.border = '2px solid green';
+								return true;
+							}else{
+								return false;
+							}
+					}
+	
+				} 
+			}
+		</script>
+		<script type="text/javascript">
+			window.onload = main;
+		</script>
+	</head>
+	
+	<body>
+		<div class="header">
+			<ul class="nav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About The Club</a></li>
+				<li><a href="alakazam.html">ALAKAZAM!</a></li>
+				<li><a href="register.html">Register</a></li>
+				<li><a href="sitemap.html">Sitemap</a></li>
+			</ul>
+		</div>
+		<div id="leftMargin"></div>
+		<div id="rightMargin"></div>
+		<div class="wrapper">
+			<h2>Join the Club!</h2>
+			<div class="form">
+				<label>Username: <input type="text" name="username" /></label>
+				<label>Password: <input type="text" name="password" /></label>
+				<label>Full Name: <input type="text" name="name" /></label>
+				<label>E-mail: <input type="text" name="email" /></label>
+				<label>Date of Birth: <input type="text" name="birthday" value="mm/dd/yyyy" /></label>
+				<label>Gender: <input type="text" name="gender" value="M/F" /></label>
+				<label>Requested Title: <input type="text" name="title" /></label>
+				<label>Credit Card: <input type="text" name="credit" /></label>
+				<!-- <li><label>Favorite Apple: </label></li><select> name="apple"><option value="red">Red</option>
+					<option value="green">Green</option> --> <!-- It makes everything under it red error in firefox -->
+				<button id="btn" onclick="setAccount()" disabled>Submit</button>
+			</div>
+			<img class="logo1" src="alakazam.gif" alt="alakazam logo"/>
+			<img class="logo2" src="alakazam.gif" alt="alakazam logo"/>
+		</div>
+	</body>
+</html>

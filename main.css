@@ -1,0 +1,114 @@
+		/* general */
+		html {
+			-webkit-text-size-adjust: 100%;
+		}
+		body{
+			margin:0;
+			padding:0;
+			background-color:#F1D755;
+			margin-top:75px;
+			font-family: 'Lato', sans-serif;
+			}
+		h2{
+			margin-left: 20px;
+		}
+		h3{
+			color: green;
+		}
+		span{
+			color: green;
+			font-size: 15px;
+			font-weight: bold;
+		}
+		.wrapper{
+			padding: 50px;
+			width:71%;
+			margin:0 auto;
+			color:#514151;
+			background-color:white;
+			}
+		.events{
+			display:inline-block;
+			position: relative;
+			right:40%;
+			left: 10%;
+			top:5%;
+		}
+		.rule{
+			height:50px;
+			width: 100%;
+			padding-left: 0;
+			background-image:URL("alakazam.gif");
+			background-repeat:repeat-x;
+			background-size:30px;
+			}
+		/* nav and header */
+		.header{
+			width:100%;
+			position:fixed;
+			padding: 40px 0;
+			top:0;
+			background-color:#836208;
+			text-align:center;
+			}
+		.header li a{
+			display:block;
+			padding:12px 0;
+			background-color:#252216;
+			color:white;
+			text-decoration:none;
+			margin:3px;
+			}
+		.header li a:hover{
+			margin:0;
+			border:3px solid white;
+			}
+		.nav li{
+			margin:5px;
+			display:table-cell;
+			}
+		.nav{
+			padding:0;
+			display:table;
+			width:60%;
+			margin: auto;
+			}
+		.logo1{
+			height:20%;
+			display:inline-block;
+			position:fixed;
+			left:0%;
+			top:50%;
+			}
+		.logo2{
+			height:20%;
+			display:inline-block;
+			position:fixed;
+			right:0%;
+			top:50%;
+			}
+		.square{width:25px;
+				height:25px;
+				}
+		.column{width:25px;
+				display:inline-block;}
+		.innerDiv{
+				margin-left: 120px;
+				margin-right: 250px;
+		}
+		.Alakazam{
+				display: block;
+    			margin-left: auto;
+    			margin-right: auto;
+		}
+		#leftMargin{
+			position:fixed;
+			left:0%;
+			top:5%;
+		}
+		#rightMargin{
+			position:fixed;
+			right:0%;
+			top:5%;
+		}
+			
